@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+
 import {
   AppBar,
   Box,
@@ -14,8 +16,6 @@ import {
   Hidden,
   Link,
 } from "@mui/material";
-
-import { Link as RouterLink } from "react-router-dom";
 
 import {
   Settings as SettingsIcon,

@@ -1,14 +1,11 @@
-import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CssBaseline, Container, Box } from "@mui/material";
-
-import { Home, Settings, Recommend } from "./pages";
 
 import { Navigation } from "./components";
+import { Home, Settings, Recommend } from "./pages";
+
+import { CssBaseline, Container, Box } from "@mui/material";
 
 export const App = () => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   return (
     <BrowserRouter>
       <CssBaseline />
