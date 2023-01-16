@@ -5,6 +5,17 @@ export const movies = [
       "https://www.themoviedb.org/t/p/w220_and_h330_face/98wN9Pc1paxu8V5iBzg9Ap8ghkQ.jpg",
     releaseDate: "2014-09-17T09:28:15 -03:00",
     title: "Netplax",
+    genres: [
+      {
+        id: 1,
+        name: "Drama",
+      },
+      {
+        id: 2,
+        name: "Horror",
+      },
+    ],
+    runtime: 123,
   },
   {
     _id: "63bc0df6693f904b56f56ebf",
