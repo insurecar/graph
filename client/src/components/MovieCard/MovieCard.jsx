@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { CardMenu } from "./components";
 
@@ -11,25 +12,33 @@ const CardInfo = styled(CardContent)(({ theme }) => ({
   },
 }));
 
-export const MovieCard = () => {
-  const onAddClick = (movie) => alert("movie is added");
+export const MovieCard = ({ movie, onCardSelect }) => {
   return (
     <Card sx={{ maxWidth: 250, position: "relative" }}>
-      <CardMenu onAddClick={onAddClick} />
+      <CardMenu onCardSelect={onCardSelect} />
       <CardMedia
         component="img"
         height="250"
-        image="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nTTR524PBfs1iE0MC2aMQK2ZeYc.jpg"
-        alt="Paella dish"
+        image={movie.image}
+        alt={movie.title}
       />
       <CardInfo>
         <Typography variant="h6" gutterBottom component="div">
-          Sonic the Hedgehog
+          {movie.title}
         </Typography>
         <Typography mb="0" variant="subtitle1" gutterBottom component="div">
-          Apr 08, 2022
+          {movie.releaseDate}
         </Typography>
       </CardInfo>
     </Card>
   );
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    releaseDate: PropTypes.string,
+  }).isRequired,
+  onCardSelect: PropTypes.func,
 };
