@@ -1,13 +1,16 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import { CardMenu } from "../index";
+
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  MenuItem,
+} from "@mui/material";
 
 export const MovieCardSelected = ({ movie, onCardDelete }) => {
   return (
@@ -18,7 +21,14 @@ export const MovieCardSelected = ({ movie, onCardDelete }) => {
         image={movie.image}
         alt={movie.title}
       />
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          position: "relative",
+        }}
+      >
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography component="div" variant="h5">
             {movie.title}
@@ -50,6 +60,9 @@ export const MovieCardSelected = ({ movie, onCardDelete }) => {
             Length: {movie.runtime}
           </Typography>
         </Box>
+        <CardMenu>
+          <MenuItem onClick={onCardDelete}>Delete</MenuItem>
+        </CardMenu>
       </Box>
     </Card>
   );

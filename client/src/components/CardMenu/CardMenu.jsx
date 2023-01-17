@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { IconButton, Menu, MenuItem } from "@mui/material";
+import { IconButton, Menu } from "@mui/material";
 import { MoreVert as MoreVertIcon } from "@mui/icons-material";
 
-export const CardMenu = ({ onCardSelect }) => {
+export const CardMenu = ({ children }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -17,7 +17,7 @@ export const CardMenu = ({ onCardSelect }) => {
         sx={{
           position: "absolute",
           right: 0,
-          color: "white",
+          color: "silver",
         }}
         aria-label="more"
         id="long-button"
@@ -42,7 +42,7 @@ export const CardMenu = ({ onCardSelect }) => {
           },
         }}
       >
-        <MenuItem onClick={onCardSelect}>Select</MenuItem>
+        {children}
       </Menu>
     </>
   );
